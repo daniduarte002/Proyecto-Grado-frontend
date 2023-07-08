@@ -1,0 +1,96 @@
+/* Estilos generales */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-image: url('fondoweb.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  
+
+  header {
+    background-color: #333;
+    padding: 10px;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+  }
+  
+  nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+  }
+  
+  nav ul li {
+    display: inline;
+    margin-right: 10px;
+  }
+  
+  nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    padding: 10px;
+  }
+  
+  section {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+
+  
+  #educacion {
+    background-color: transparent;
+    color: #333;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .educacion-item {
+    margin-bottom: 20px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    width: 300px;
+  }
+  
+  .educacion-item h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+  
+  .educacion-item h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+  
+  .educacion-item p {
+    font-size: 14px;
+    margin-bottom: 5px;
+  }
+  
+  @media (min-width: 768px) {
+    #educacion {
+      justify-content: space-between;
+      align-items: center;
+    }
+  }
+  
+  
+  footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+  }

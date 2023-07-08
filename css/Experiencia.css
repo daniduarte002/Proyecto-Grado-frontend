@@ -1,0 +1,92 @@
+/* Estilos generales */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-image: url('fondoweb.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+
+header {
+  background-color: #333;
+  padding: 10px;
+  display: flex;
+  justify-content: center; /* Centra horizontalmente */
+}
+
+footer {
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  padding: 10px;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+}
+/* Fin de Estilos generales */
+
+
+nav ul {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+nav ul li {
+  margin: 0 10px;
+}
+
+nav ul li a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: calc(100vh - 70px); 
+}
+
+.caja {
+  width: 400px;
+  background-color: #e6e6e6;
+  padding: 20px;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+}
+
+.contenido {
+  flex-grow: 1;
+  text-align: center;
+}
+
+.caja h2 {
+  margin-top: 0;
+}
+
+.caja p {
+  margin-bottom: 5px;
+}
+
+.caja img {
+  width: 150px;
+  margin-left: 10px;
+}
+
+footer {
+  background-color: #333;
+  padding: 10px;
+  color: #fff;
+  text-align: center;
+}
+
+footer p {
+  margin: 0;
+}
