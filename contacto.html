@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Mi Sitio Web - Educación</title>
   <link rel="stylesheet" type="text/css" href="css/contacto.css">
+  <script src="Integracion.js"></script> 
 </head>
 <body>
   <header>
@@ -19,49 +20,49 @@
     </nav>
   </header>
 
-    <div class="container">
-      <div class="formulario">
-        <form action="procesar_formulario.php" method="POST">
-          <label for="nombres">Nombres:</label>
-          <input type="text" id="nombres" name="nombres">
-  
-          <label for="apellidos">Apellidos:</label>
-          <input type="text" id="apellidos" name="apellidos">
-  
-          <label for="tipo-id">Tipo de Identificación:</label>
-          <select id="tipo-id" name="tipo-id">
-            <option value="CC">CC</option>
-            <option value="Nuit">Nuit</option>
-            <option value="CE">CE</option>
-          </select>
-  
-          <label for="numero-id">Número de Identificación:</label>
-          <input type="text" id="numero-id" name="numero-id">
-  
-          <label for="telefono">Teléfono:</label>
-          <input type="tel" id="telefono" name="telefono">
-  
-          <label for="email">Email:</label>
-          <input type="email" id="email" name="email">
-  
-          <label for="profesion">Profesión:</label>
-          <input type="text" id="profesion" name="profesion">
-  
-          <label for="rol">Rol:</label>
-          <select id="rol" name="rol">
-            <option value="Administrador">Administrador</option>
-            <option value="Visualizador">Visualizador</option>
-            <option value="Ejecutor">Ejecutor</option>
-            <option value="Invitado">Invitado</option>
-          </select>
-  
-          <input type="submit" value="Enviar">
-        </form>
-      </div>
+  <div class="container">
+    <div class="formulario">
+      <form id="formulario-contacto">
+        <label for="nombres">Nombres:</label>
+        <input type="text" id="nombres" name="nombres">
+
+        <label for="apellidos">Apellidos:</label>
+        <input type="text" id="apellidos" name="apellidos">
+
+        <label for="tipo-id">Tipo de Identificación:</label>
+        <select id="tipo-id" name="tipo-id">
+          <option value="CC">CC</option>
+          <option value="Nuit">Nuit</option>
+          <option value="CE">CE</option>
+        </select>
+
+        <label for="numero-id">Número de Identificación:</label>
+        <input type="text" id="numero-id" name="numero-id">
+
+        <label for="telefono">Teléfono:</label>
+        <input type="tel" id="telefono" name="telefono">
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email">
+
+        <label for="profesion">Profesión:</label>
+        <input type="text" id="profesion" name="profesion">
+
+        <label for="rol">Rol:</label>
+        <select id="rol" name="rol">
+          <option value="Administrador">Administrador</option>
+          <option value="Visualizador">Visualizador</option>
+          <option value="Ejecutor">Ejecutor</option>
+          <option value="Invitado">Invitado</option>
+        </select>
+
+        <input type="submit" value="Enviar" onclick="event.preventDefault(); saveCont();">
+      </form>
     </div>
-    <footer>
-      <p>Derechos de Autor &copy; 2023 - Mi Hoja de vida</p>
-    </footer>
-  </body>
-  </html>
+  </div>
   
+  <footer>
+    <p>Derechos de Autor &copy; 2023 - Mi Hoja de vida</p>
+  </footer>
+</body>
+</html>
