@@ -1,59 +1,46 @@
 function saveCont() {
     event.preventDefault(); // Prevenir el comportamiento predeterminado del formulario (recargar la página)
 
-    let nombresContact = document.getElementById("nombres").value;
-    let apellidosContact = document.getElementById("apellidos").value;
-    let tipoIdContact = document.getElementById("tipo-id").value;
-    let numeroIdContact = document.getElementById("numero-id").value;
-    let telefonoContact = document.getElementById("telefono").value;
-    let emailContact = document.getElementById("email").value;
-    let profesionContact = document.getElementById("profesion").value;
-    let rolContact = document.getElementById("rol").value;
+    let NombresContact = document.getElementById("nombres").value;
+    let ApellidosContact = document.getElementById("apellidos").value;
+    let Tipo_IdentificacionContact = document.getElementById("tipo-id").value;
+    let Numero_IdentificacionContact = document.getElementById("numero-id").value;
+    let TelefonoContact = document.getElementById("telefono").value;
+    let EmailContact = document.getElementById("email").value;
+    let ProfesionContact = document.getElementById("profesion").value;
+    let RolContact = document.getElementById("rol").value;
 
     let cont = {
-        nombres: nombresContact,
-        apellidos: apellidosContact,
-        tipoId: tipoIdContact,
-        numeroId: numeroIdContact,
-        telefono: telefonoContact,
-        email: emailContact,
-        profesion: profesionContact,
-        rol: rolContact
+        Nombres: NombresContact,
+        Apellidos: ApellidosContact,
+        Tipo_Identificacion: Tipo_IdentificacionContact,
+        Numero_Identificacion: Numero_IdentificacionContact,
+        Telefono: TelefonoContact,
+        Email: EmailContact,
+        Profesion: ProfesionContact,
+        Rol: RolContact
     };
 
     console.log(cont);
+    // Convierte el objeto en una cadena JSON
+    var jsonData = JSON.stringify(cont);
 
-    let url = "http://localhost/api/requerimientoC";
-    let params = {
-        method: "POST",
+    console.log(jsonData);
+
+    // Realiza la petición POST utilizando la cadena JSON
+    fetch('http://localhost:8000/api/RequerimientoC', {
+        method: 'POST',
         headers: {
-            "Content-Type": "application/json"
+        'Content-Type': 'application/json'
         },
-        body: JSON.stringify(cont)
-    };
+        body: jsonData
+    })
+    .then(response => response.json())
+    .then(data => {
+        console.log('Respuesta del API:', data);
+    })
+    .catch(error => {
+        console.error('Error al enviar la petición:', error);
+    });
 
-    fetch(url, params)
-        .then(response => {
-            console.log(response);
-
-            // Leer la respuesta como JSON una sola vez
-            return response.json();
-        })
-        .then(data => {
-            console.log(data);
-
-            if (response.status == 201) {
-                alert("Registro exitoso"); // Mostrar alerta de registro exitoso
-            } else {
-                alert("Error en la creación del mensaje");
-            }
-        })
-        .catch(error => {
-            console.error(error);
-
-            // Manejar el error de la solicitud
-            alert("Error en la solicitud");
-        });
-
-    return true;
 }
